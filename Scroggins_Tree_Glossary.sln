@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Scroggins_Tree_Glossary", "Scroggins_Tree_Glossary\Scroggins_Tree_Glossary.vcxproj", "{D486D867-E5E9-4239-B3DE-820F57D811D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D486D867-E5E9-4239-B3DE-820F57D811D9}.Debug|x64.ActiveCfg = Debug|x64
+		{D486D867-E5E9-4239-B3DE-820F57D811D9}.Debug|x64.Build.0 = Debug|x64
+		{D486D867-E5E9-4239-B3DE-820F57D811D9}.Debug|x86.ActiveCfg = Debug|Win32
+		{D486D867-E5E9-4239-B3DE-820F57D811D9}.Debug|x86.Build.0 = Debug|Win32
+		{D486D867-E5E9-4239-B3DE-820F57D811D9}.Release|x64.ActiveCfg = Release|x64
+		{D486D867-E5E9-4239-B3DE-820F57D811D9}.Release|x64.Build.0 = Release|x64
+		{D486D867-E5E9-4239-B3DE-820F57D811D9}.Release|x86.ActiveCfg = Release|Win32
+		{D486D867-E5E9-4239-B3DE-820F57D811D9}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E2AC37F3-00BE-4831-B0D0-F2CE07BA46AC}
+	EndGlobalSection
+EndGlobal
