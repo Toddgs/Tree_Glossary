@@ -1,4 +1,5 @@
 #include "Tree.h"
+#include "Node.h"
 #include <string>
 #include <iostream>
 #include <queue>
@@ -19,62 +20,62 @@ Tree::~Tree()
 
 // Free the node.
 // What kind of traversal is this? Post-order.
-void Tree::freeNode(Node* leaf)
+void Tree::freeNode(Node* theNode)
 {
-	if (leaf != NULL)
+	if (theNode != NULL)
 	{
-		freeNode(leaf->left);
-		freeNode(leaf->right);
-		delete leaf;
+		freeNode(theNode->left);
+		freeNode(theNode->right);
+		delete theNode;
 	}
 }
 
 // Add a node.
-void Tree::addNode(string theKey)
+void Tree::addNode(Term theTerm)
 {
 	// No elements. Add to the root position.
 	if (isEmpty())
 	{
-		cout << "Add root node ... " << theKey << endl;
+		cout << "Add root node ... " << theTerm.getWord << endl;
 		Node* n = new Node();
-		n->key = theKey;
+		n->term = theTerm;
 		root = n;
 	}
 	else // Otherwise traverse to the correct position.
 	{
-		cout << "Add new node ... " << theKey << endl;
-		addNode(theKey, root);
+		cout << "Add new node ... " << theTerm.getWord << endl;
+		addNode(theTerm, root);
 	}
 }
 
 // Add a node using recursion.
-void Tree::addNode(string theKey, Node* leaf)
+void Tree::addNode(Term theTerm, Node* node)
 {
 
-	if (theKey <= leaf->key) // If less, go left.
+	if (theTerm <= node->term) // If less, go left.
 	{
-		if (leaf->left != NULL)	// Keep searching recursively until empty node position.
+		if (node->left != NULL)	// Keep searching recursively until empty node position.
 		{
-			addNode(theKey, leaf->left);
+			addNode(theTerm, node->left);
 		}
 		else							// Add node into empty correct position.
 		{
 			Node* n = new Node();
-			n->key = theKey;
-			leaf->left = n;
+			n->term = theTerm;
+			node->left = n;
 		}
 	}
 	else
 	{
-		if (leaf->right != NULL)	// Keep searching recursively until empty node position.
+		if (node->right != NULL)	// Keep searching recursively until empty node position.
 		{
-			addNode(theKey, leaf->right);
+			addNode(theTerm, node->right);
 		}
 		else						// Add node into empty correct position.
 		{
 			Node* n = new Node();
-			n->key = theKey;
-			leaf->right = n;
+			n->term = theTerm;
+			node->right = n;
 		}
 	}
 }
@@ -92,7 +93,7 @@ void Tree::levelOrder(Node* n)
 	{
 		// Dequeue a node from front
 		Node* v = q.front();
-		cout << v->key << endl;
+		cout << v->term.getWord << endl;
 
 		// Enqueue the left children
 		if (v->left != NULL)
@@ -115,7 +116,7 @@ void Tree::preorder(Node* node)
 {
 	if (node)
 	{
-		cout << node->key << endl;
+		cout << node->term.getWord << endl;
 		preorder(node->left);
 		preorder(node->right);
 	}
@@ -126,7 +127,7 @@ void Tree::inorder(Node* node)
 	if (node != NULL)
 	{
 		inorder(node->left);
-		cout << node->key << endl;
+		cout << node->term.getWord << endl;
 		inorder(node->right);
 	}
 }
@@ -137,6 +138,6 @@ void Tree::postorder(Node* node)
 	{
 		postorder(node->left);
 		postorder(node->right);
-		cout << node->key << endl;
+		cout << node->term.getWord << endl;
 	}
 }

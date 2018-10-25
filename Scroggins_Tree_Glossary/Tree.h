@@ -10,7 +10,8 @@ public:
 	//Basic public tree operations
 	Node* getRoot() { return root; }; //Returns the root
 	bool isEmpty() { return (root == NULL); }
-	void addNode(string theKey); //Adds a node.
+	void addNode(Term theTerm); //Adds a node.
+	void addNode(Term theTerm, Node* node);
 	void deleteNode(Node* node, string theKey); //Deletes a specified node
 	//Traversals.
 	virtual void levelOrder(Node* n);
@@ -19,6 +20,6 @@ public:
 	virtual void preorder(Node* node);
 	virtual void preorder() { preorder(root); }
 private:
-	void addNode(string theKey, Node* node);
+	
 	void freeNode(Node* node);
 };

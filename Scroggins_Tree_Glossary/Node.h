@@ -1,11 +1,11 @@
-#include <string>
+#pragma once
+#include "Tree.h"
+#include "Term.h"
 
 class Node
 {
-	string key;
+public: 
+	Term term;
 	Node* left;
 	Node* right;
-	friend class Tree;
-public:
-	Node() { key = "-1"; left = NULL; right = NULL; };
 };
