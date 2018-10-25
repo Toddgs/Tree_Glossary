@@ -6,8 +6,39 @@
 
 using namespace std;
 
+Term::Term()
+{
+	setWord("");
+	setDefinition("");
+}
+
+Term::Term(string word, string definition)
+{
+	setWord(word);
+	setDefinition(definition);
+}
+
+string Term::getWord() const
+{
+	return word;
+}
+
+string Term::getDefinition() const
+{
+	return definition;
+}
+
+void Term::setWord(string theWord)
+{
+	word = theWord;
+}
+
+void Term::setDefinition(string theDefinition)
+{
+	definition = theDefinition;
+}
 // Print the tree level-order assisted by queue
-void Term::levelOrder(Node* n)
+void Term::levelOrder(Node* node)
 {
 	//FIXME: COUT the stuff needed, inheritance should do it's magic
 }

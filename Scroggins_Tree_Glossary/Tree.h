@@ -1,9 +1,9 @@
-#include <string>
 #include "Node.h"
 
 class Tree
 {
 	Node* root;
+	friend class Term;
 public:
 	Tree(); //Default Constructor
 	~Tree(); //Desctructor

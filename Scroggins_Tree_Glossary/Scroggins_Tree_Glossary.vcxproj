@@ -168,6 +168,9 @@
     <ClCompile Include="Tree.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Terms.csv" />
+  </ItemGroup>
+  <ItemGroup>
     <Text Include="Terms.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
