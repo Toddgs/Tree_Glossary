@@ -1,5 +1,4 @@
 #pragma once
-#include "Tree.h"
 #include "Term.h"
 
 class Node

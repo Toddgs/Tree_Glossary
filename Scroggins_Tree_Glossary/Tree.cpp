@@ -1,8 +1,10 @@
+#include "pch.h"
 #include "Tree.h"
 #include "Node.h"
 #include <string>
 #include <iostream>
 #include <queue>
+
 
 using namespace std;
 
@@ -36,14 +38,14 @@ void Tree::addNode(Term theTerm)
 	// No elements. Add to the root position.
 	if (isEmpty())
 	{
-		cout << "Add root node ... " << theTerm.getWord << endl;
+		cout << "Add root node ... " << &theTerm << endl;
 		Node* n = new Node();
 		n->term = theTerm;
 		root = n;
 	}
 	else // Otherwise traverse to the correct position.
 	{
-		cout << "Add new node ... " << theTerm.getWord << endl;
+		cout << "Add new node ... " << &theTerm << endl;
 		addNode(theTerm, root);
 	}
 }
@@ -52,7 +54,7 @@ void Tree::addNode(Term theTerm)
 void Tree::addNode(Term theTerm, Node* node)
 {
 
-	if (theTerm <= node->term) // If less, go left.
+	if (&theTerm <= &node->term) // If less, go left.
 	{
 		if (node->left != NULL)	// Keep searching recursively until empty node position.
 		{
@@ -93,7 +95,7 @@ void Tree::levelOrder(Node* n)
 	{
 		// Dequeue a node from front
 		Node* v = q.front();
-		cout << v->term.getWord << endl;
+		cout << &v->term << endl;
 
 		// Enqueue the left children
 		if (v->left != NULL)
@@ -116,7 +118,7 @@ void Tree::preorder(Node* node)
 {
 	if (node)
 	{
-		cout << node->term.getWord << endl;
+		cout << &node->term << endl;
 		preorder(node->left);
 		preorder(node->right);
 	}
@@ -127,7 +129,7 @@ void Tree::inorder(Node* node)
 	if (node != NULL)
 	{
 		inorder(node->left);
-		cout << node->term.getWord << endl;
+		cout << &node->term << endl;
 		inorder(node->right);
 	}
 }
@@ -138,6 +140,6 @@ void Tree::postorder(Node* node)
 	{
 		postorder(node->left);
 		postorder(node->right);
-		cout << node->term.getWord << endl;
+		cout << &node->term << endl;
 	}
 }

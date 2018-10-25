@@ -1,10 +1,13 @@
-#include "Term.h"
+
+#include "pch.h"
+
 #include <string>
 #include <iostream>
 #include <queue>
+#include "Term.h"
 
 
-using namespace std;
+//using namespace std;
 
 Term::Term()
 {
@@ -37,6 +40,8 @@ void Term::setDefinition(string theDefinition)
 {
 	definition = theDefinition;
 }
+
+/*
 // Print the tree level-order assisted by queue
 void Term::levelOrder(Node* node)
 {
@@ -57,3 +62,4 @@ void Term::postorder(Node* node)
 {
 	//FIXME: COUT the stuff needed, inheritance should do it's magic
 }
+*/
