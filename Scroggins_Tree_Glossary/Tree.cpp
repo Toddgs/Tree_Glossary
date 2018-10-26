@@ -54,7 +54,7 @@ void Tree::addNode(Term theTerm)
 void Tree::addNode(Term theTerm, Node* node)
 {
 
-	if (&theTerm <= &node->term) // If less, go left.
+	if (&theTerm <= &node->term) // If less, go left. FIXME: Think about using string comparison to determine which is "less"
 	{
 		if (node->left != NULL)	// Keep searching recursively until empty node position.
 		{
